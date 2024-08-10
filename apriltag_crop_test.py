@@ -144,26 +144,6 @@ while rval:
         cv2.fillPoly(blank, [tag.corners.astype(np.int32)], (0, 0, 0))
 
         text = ["Hello!", "Testing!", "Apriltags!"][tag.tag_id % 3]
-        
-        # add testimage
-        # target_width = 10
-        # target_height = 10
-        # x_scale = target_width / testimg.shape[1]
-        # y_scale = target_height / testimg.shape[0]
-        # testimg_center = (testimg.shape[1]//2, testimg.shape[0]//2)
-        # scaled_testimg = cv2.resize(testimg, testimg_center, fx=x_scale, fy=y_scale)
-        # x_offset = scaled_testimg.shape[1]//2-130
-        # y_offset = scaled_testimg.shape[0]//2-50
-        # angle = math.atan2(tag.corners[1][1] - tag.corners[0][1], tag.corners[1][0] - tag.corners[0][0])
-        # img_center = (scaled_testimg.shape[1]//2, scaled_testimg.shape[0]//2)
-        # # translate the offsets to match the center of the tag and rotation
-        # rot_x_offset = int(x_offset * math.cos(angle) - y_offset * math.sin(angle) + center[0])
-        # rot_y_offset = int(x_offset * math.sin(angle) + y_offset * math.cos(angle) + center[1])
-        # rot_testimg = cv2.warpAffine(scaled_testimg, cv2.getRotationMatrix2D(img_center, -math.degrees(angle), 1), (scaled_testimg.shape[1], scaled_testimg.shape[0]))
-        # try:
-        #     blank[rot_y_offset:rot_y_offset+rot_testimg.shape[0], rot_x_offset:rot_x_offset+rot_testimg.shape[1]] = cv2.addWeighted(blank[rot_y_offset:rot_y_offset+rot_testimg.shape[0], rot_x_offset:rot_x_offset+rot_testimg.shape[1]], 1, rot_testimg, 1, 0)
-        # except:
-        #     pass
 
     fps = 1 / (time.time() - last_frame)
     last_frame = time.time()
