@@ -1,0 +1,7 @@
+%YAML:1.0
+---
+corners: !!opencv-matrix
+   rows: 4
+   cols: 1
+   dt: "2f"
+   data: [ 317., 370., 931., 23., 940., 363., 321., 31. ]
